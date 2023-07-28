@@ -15,7 +15,7 @@ function App() {
 
   async function getImage() {
     try {
-      const API = `https://api.unsplash.com/photos/?client_id=${process.env.REACT_APP_ACCESS_KEY}&q=${searchQuery}&format=json`;
+      const API = `http://localhost:8090/photos?subject=${searchQuery}`;
       const response = await axios.get(API);
       setImg(response.data[0].img_url);
     } catch (error) {
